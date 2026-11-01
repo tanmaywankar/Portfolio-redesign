@@ -17,7 +17,7 @@ export const Footer = () => {
             TANMAY WANKAR
           </h2>
           <p className="font-mono text-xs text-subtle dark:text-neutral-400 mt-1.5 tracking-wide">
-            Nagpur, Maharashtra, India — Full-Stack &amp; Systems Engineer
+            Nagpur, Maharashtra, India — Full-Stack Engineer
           </p>
           <p className="font-mono text-[11px] text-ink/70 dark:text-neutral-400 mt-6 tracking-wider">
             © {currentYear} TANMAY WANKAR. ALL RIGHTS RESERVED.
@@ -30,7 +30,7 @@ export const Footer = () => {
           <a
             aria-label="GitHub Profile"
             className="w-10 h-10 bg-cobalt text-white flex items-center justify-center border-2 border-cobalt hover:bg-black hover:border-black dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-black transition-all hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[3px_3px_0px_0px_#FFFFFF] active:translate-x-[1px] active:translate-y-[1px]"
-            href="https://github.com"
+            href="https://github.com/tanmaywankar"
             rel="noopener noreferrer"
             target="_blank"
             data-cursor="morph"
@@ -42,7 +42,7 @@ export const Footer = () => {
           <a
             aria-label="LinkedIn Profile"
             className="w-10 h-10 bg-cobalt text-white flex items-center justify-center border-2 border-cobalt hover:bg-black hover:border-black dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-black transition-all hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[3px_3px_0px_0px_#FFFFFF] active:translate-x-[1px] active:translate-y-[1px]"
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/tanmay-wankar"
             rel="noopener noreferrer"
             target="_blank"
             data-cursor="morph"
@@ -54,7 +54,7 @@ export const Footer = () => {
           <a
             aria-label="Phone Contact"
             className="w-10 h-10 bg-cobalt text-white flex items-center justify-center border-2 border-cobalt hover:bg-black hover:border-black dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-black transition-all hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[3px_3px_0px_0px_#FFFFFF] active:translate-x-[1px] active:translate-y-[1px]"
-            href="tel:+910000000000"
+            href="tel:+918830082817"
             data-cursor="morph"
           >
             <Phone className="w-4 h-4 stroke-[2.2]" />
@@ -64,7 +64,7 @@ export const Footer = () => {
           <a
             aria-label="Email Contact"
             className="w-10 h-10 bg-cobalt text-white flex items-center justify-center border-2 border-cobalt hover:bg-black hover:border-black dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-black transition-all hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[3px_3px_0px_0px_#FFFFFF] active:translate-x-[1px] active:translate-y-[1px]"
-            href="mailto:tanmay@example.com"
+            href="mailto:tanmaywankar4@gmail.com"
             data-cursor="morph"
           >
             <Mail className="w-4 h-4 stroke-[2.2]" />

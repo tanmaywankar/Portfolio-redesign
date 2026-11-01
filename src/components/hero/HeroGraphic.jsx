@@ -33,7 +33,7 @@ export const HeroGraphic = ({ photoSrc }) => {
             <img
               src={photoSrc}
               alt="Tanmay Wankar"
-              className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover grayscale contrast-125"
             />
           ) : (
             <div className="relative z-10 flex flex-col items-center justify-center text-center p-4">

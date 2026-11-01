@@ -20,7 +20,7 @@ export const TopProjects = () => {
       </div>
 
       {/* Premier Top 2 Projects in 2 Columns Side-by-Side */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 pb-14 border-b-2 border-ink dark:border-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 pb-20 border-b-4 border-ink">
         {TOP_PROJECTS.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

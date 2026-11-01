@@ -14,7 +14,7 @@ export const Hero = () => {
           <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-black dark:text-white leading-[1.05]">
             Tanmay Wankar
             <span className="block font-mono text-xl sm:text-2xl text-neutral-500 dark:text-neutral-400 font-normal tracking-normal mt-3">
-              Full-Stack &amp; Systems Engineer
+              Full-Stack Engineer
             </span>
           </h1>
 
@@ -29,18 +29,20 @@ export const Hero = () => {
             </a>
 
             <a
-              href="#skills-education"
+              href="https://drive.google.com/drive/folders/13IOpDjW1-B-lAI2TdfgsNt-9oyrh-eGD?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               data-cursor="morph"
               className="inline-flex items-center justify-center px-6 py-3.5 bg-white dark:bg-charcoalCard text-ink dark:text-white border-2 border-ink dark:border-white font-mono text-xs font-bold uppercase tracking-wider shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] transition-all hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black active:translate-x-[2px] active:translate-y-[2px]"
             >
-              RESUME &amp; SKILLS
+              RESUME
             </a>
           </div>
         </div>
 
         {/* Right Column: Architectural Photo Frame */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end items-center">
-          <HeroGraphic />
+          <HeroGraphic photoSrc="/images/cover.png" />
         </div>
       </div>
 
@@ -53,7 +55,7 @@ export const Hero = () => {
           aria-label="Scroll down to projects"
         >
           <div className="w-6 h-11 border-2 border-ink dark:border-white rounded-full flex justify-center p-1.5 transition-transform group-hover:translate-y-1">
-            <span className="w-1.5 h-2.5 bg-ink dark:bg-white rounded-full animate-bounce" />
+            <span className="w-2.5 h-2.5 bg-ink dark:bg-white rounded-full animate-ud" />
           </div>
           <span className="font-mono text-[9px] uppercase tracking-widest text-subtle dark:text-neutral-400 font-semibold">
             SCROLL
