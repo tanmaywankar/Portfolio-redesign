@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export const LoadingScreen = ({ minDuration = 900, onComplete }) => {
+export const LoadingScreen = ({ maxDuration = 3000, minDuration = 0, onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [dots, setDots] = useState('.');
@@ -22,14 +22,9 @@ export const LoadingScreen = ({ minDuration = 900, onComplete }) => {
     return () => clearInterval(interval);
   }, []);
 
-  // Real Asset & Page Load Detection combined with a minimum animation floor
+  // Real Asset & Page Load Detection with 3s maximum hard ceiling
   useEffect(() => {
     let isMounted = true;
-
-    // Minimum display floor so fast connections don't see an epileptic 50ms screen flicker
-    const minTimePromise = new Promise((resolve) =>
-      setTimeout(resolve, minDuration)
-    );
 
     // 1. Real window & document load
     const windowLoadPromise = new Promise((resolve) => {
@@ -74,16 +69,20 @@ export const LoadingScreen = ({ minDuration = 900, onComplete }) => {
       });
     });
 
-    // Hard timeout fallback so the user is NEVER trapped on the loading screen even on flaky networks
+    const assetPromises = [windowLoadPromise, fontsPromise, imagesPromise];
+    if (minDuration > 0) {
+      assetPromises.push(
+        new Promise((resolve) => setTimeout(resolve, minDuration))
+      );
+    }
+
+    // Hard timeout ceiling: MUST dismiss at 3 seconds if not already loaded before then
     const maxTimeoutPromise = new Promise((resolve) =>
-      setTimeout(resolve, 1600)
+      setTimeout(resolve, maxDuration)
     );
 
-    // Dismiss as soon as all assets are ready, or immediately when the 2.5s maximum deadline hits
-    Promise.race([
-      Promise.all([windowLoadPromise, fontsPromise, imagesPromise, minTimePromise]),
-      maxTimeoutPromise,
-    ]).then(() => {
+    // Dismiss as soon as all assets are ready, or immediately when the 3s deadline hits
+    Promise.race([Promise.all(assetPromises), maxTimeoutPromise]).then(() => {
       if (!isMounted) return;
       setIsFadingOut(true);
 
@@ -97,7 +96,7 @@ export const LoadingScreen = ({ minDuration = 900, onComplete }) => {
     return () => {
       isMounted = false;
     };
-  }, [minDuration, onComplete]);
+  }, [maxDuration, minDuration, onComplete]);
 
   // Smooth 2D <-> 3D logo extrusion loop using requestAnimationFrame for 60/120fps smoothness
   useEffect(() => {
