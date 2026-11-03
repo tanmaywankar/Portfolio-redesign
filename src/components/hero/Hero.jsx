@@ -4,22 +4,22 @@ import { HeroGraphic } from './HeroGraphic';
 export const Hero = () => {
   return (
     <section
-      className="max-w-6xl mx-auto px-6 sm:px-10 pt-16 md:pt-24 pb-16"
+      className="max-w-6xl mx-auto px-6 sm:px-10 pt-12 sm:pt-16 md:pt-24 pb-16"
       data-purpose="hero-banner"
       id="hero"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        {/* Left Column: Pure Editorial Headline & Action Buttons */}
-        <div className="lg:col-span-7 flex flex-col justify-center">
-          <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-black dark:text-white leading-[1.05]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Headline & Action Buttons: order-2 on mobile/tablet (below image), order-1 on desktop (left side) */}
+        <div className="order-2 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left justify-center">
+          <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-black dark:text-white leading-[1.08] text-center lg:text-left">
             Tanmay Wankar
-            <span className="block font-mono text-xl sm:text-2xl text-neutral-500 dark:text-neutral-400 font-normal tracking-normal mt-3">
+            <span className="block font-mono text-lg sm:text-2xl text-neutral-500 dark:text-neutral-400 font-normal tracking-normal mt-3 text-center lg:text-left">
               Full-Stack Engineer
             </span>
           </h1>
 
-          {/* Direct Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mt-10">
+          {/* Direct Action Buttons: centered on mobile/tablet, left-aligned on desktop */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8 sm:mt-10">
             <a
               href="#top-projects"
               data-cursor="morph"
@@ -40,14 +40,14 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Right Column: Architectural Photo Frame */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end items-center">
+        {/* Architectural Photo Frame: order-1 on mobile/tablet (top & centered), order-2 on desktop (right side) */}
+        <div className="order-1 lg:order-2 lg:col-span-5 w-full flex justify-center lg:justify-end items-center">
           <HeroGraphic photoSrc="/images/cover.webp" />
         </div>
       </div>
 
       {/* Centered Technical Mouse Indicator */}
-      <div className="w-full flex justify-center pt-20 pb-4">
+      <div className="w-full flex justify-center pt-16 md:pt-20 pb-4">
         <a
           href="#top-projects"
           data-cursor="morph"

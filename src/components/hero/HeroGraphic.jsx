@@ -2,9 +2,9 @@ import React from 'react';
 
 export const HeroGraphic = ({ photoSrc }) => {
   return (
-    <div className="relative flex justify-center lg:justify-end items-center">
+    <div className="relative w-full flex justify-center lg:justify-end items-center">
       <div
-        className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 border-2 border-ink dark:border-white bg-white dark:bg-charcoalCard p-5 shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] flex flex-col justify-between relative transition-all duration-200 hover:-translate-y-1"
+        className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 border-2 border-ink dark:border-white bg-white dark:bg-charcoalCard p-4 sm:p-5 shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] flex flex-col justify-between relative transition-all duration-200 hover:-translate-y-1 mx-auto lg:mx-0"
         data-cursor="hover-btn"
       >
         {/* Top Technical Metadata Stamp */}
