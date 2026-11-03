@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export const LoadingScreen = ({ minDuration = 1800, onComplete }) => {
+export const LoadingScreen = ({ minDuration = 900, onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [dots, setDots] = useState('.');
@@ -74,19 +74,25 @@ export const LoadingScreen = ({ minDuration = 1800, onComplete }) => {
       });
     });
 
-    // Dismiss only when the page, fonts, and assets are 100% loaded AND minimum cycle finishes
-    Promise.all([windowLoadPromise, fontsPromise, imagesPromise, minTimePromise]).then(
-      () => {
-        if (!isMounted) return;
-        setIsFadingOut(true);
-
-        setTimeout(() => {
-          if (!isMounted) return;
-          setIsVisible(false);
-          if (onComplete) onComplete();
-        }, 500); // 500ms fade-out transition
-      }
+    // Hard timeout fallback so the user is NEVER trapped on the loading screen even on flaky networks
+    const maxTimeoutPromise = new Promise((resolve) =>
+      setTimeout(resolve, 1600)
     );
+
+    // Dismiss as soon as all assets are ready, or immediately when the 2.5s maximum deadline hits
+    Promise.race([
+      Promise.all([windowLoadPromise, fontsPromise, imagesPromise, minTimePromise]),
+      maxTimeoutPromise,
+    ]).then(() => {
+      if (!isMounted) return;
+      setIsFadingOut(true);
+
+      setTimeout(() => {
+        if (!isMounted) return;
+        setIsVisible(false);
+        if (onComplete) onComplete();
+      }, 400); // 400ms fade-out transition
+    });
 
     return () => {
       isMounted = false;

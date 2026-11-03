@@ -42,7 +42,7 @@ export const Hero = () => {
 
         {/* Right Column: Architectural Photo Frame */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end items-center">
-          <HeroGraphic photoSrc="/images/cover.png" />
+          <HeroGraphic photoSrc="/images/cover.webp" />
         </div>
       </div>
 

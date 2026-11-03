@@ -8,7 +8,7 @@ export const ThemeToggle = () => {
     const hasDarkClass = document.documentElement.classList.contains('dark');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) return savedTheme === 'dark';
-    return hasDarkClass || window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return savedTheme === 'dark';
   });
 
   // Sync on mount
