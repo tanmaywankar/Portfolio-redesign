@@ -91,3 +91,20 @@
 .animate-ud {
   animation: ud 2s ease-in-out infinite;
 }
+
+/* Remove greyscale and contrast boost on Android and mobile touch devices */
+html.is-android img,
+html.is-android .grayscale,
+html.is-android [class*="grayscale"] {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  img,
+  .grayscale,
+  [class*="grayscale"] {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+}

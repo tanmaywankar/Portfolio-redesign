@@ -4,7 +4,7 @@ export const HeroGraphic = ({ photoSrc }) => {
   return (
     <div className="relative w-full flex justify-center lg:justify-end items-center">
       <div
-        className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 border-2 border-ink dark:border-white bg-white dark:bg-charcoalCard p-4 sm:p-5 shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] flex flex-col justify-between relative transition-all duration-200 hover:-translate-y-1 mx-auto lg:mx-0"
+        className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 border-2 border-ink dark:border-white bg-white dark:bg-charcoalCard p-4 sm:p-5 shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] flex flex-col justify-between relative transition-all duration-200 hover:-translate-y-1 mx-auto lg:mx-0 group"
         data-cursor="hover-btn"
       >
         {/* Top Technical Metadata Stamp */}
@@ -18,7 +18,7 @@ export const HeroGraphic = ({ photoSrc }) => {
         </div>
 
         {/* Center Architectural Viewport Container for Portrait Photo */}
-        <div className="relative flex-1 my-3 border border-ink/30 dark:border-white/30 bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center overflow-hidden group">
+        <div className="relative flex-1 my-3 border border-ink/30 dark:border-white/30 bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center overflow-hidden">
           {/* Subtle Grid Backdrop */}
           <div
             className="absolute inset-0 opacity-20 dark:opacity-10 pointer-events-none"
@@ -33,7 +33,7 @@ export const HeroGraphic = ({ photoSrc }) => {
             <img
               src={photoSrc}
               alt="Tanmay Wankar"
-              className="w-full h-full object-cover grayscale contrast-125"
+              className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-300"
             />
           ) : (
             <div className="relative z-10 flex flex-col items-center justify-center text-center p-4">

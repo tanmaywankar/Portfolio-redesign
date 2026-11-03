@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Hero } from './components/hero/Hero';
 import { TopProjects } from './components/projects/TopProjects';
@@ -12,6 +12,18 @@ import { useLenis } from './hooks/useLenis';
 export const App = () => {
   // Initialize Lenis smooth scroll for desktop with touch protection
   useLenis();
+
+  // Detect Android & mobile devices to ensure grayscale filter is removed
+  useEffect(() => {
+    if (typeof navigator !== 'undefined') {
+      const isAndroid =
+        /Android/i.test(navigator.userAgent) ||
+        (navigator.userAgentData && navigator.userAgentData.platform === 'Android');
+      if (isAndroid) {
+        document.documentElement.classList.add('is-android');
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-paper dark:bg-charcoal text-ink dark:text-white font-sans selection:bg-cobalt selection:text-white relative transition-colors duration-250">

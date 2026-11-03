@@ -10,6 +10,11 @@
           } else {
             document.documentElement.classList.remove('dark');
           }
+          var isAndroid = /Android/i.test(navigator.userAgent) || 
+                          (navigator.userAgentData && navigator.userAgentData.platform === 'Android');
+          if (isAndroid) {
+            document.documentElement.classList.add('is-android');
+          }
         } catch (e) {}
       })();
     </script>
