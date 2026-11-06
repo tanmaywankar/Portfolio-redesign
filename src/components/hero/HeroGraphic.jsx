@@ -23,7 +23,7 @@ export const HeroGraphic = ({ photoSrc }) => {
             <img
               src={photoSrc}
               alt="Tanmay Wankar"
-              className="w-full h-full object-cover group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-300"
+              className="hero-portrait w-full h-full object-cover transition-[filter] duration-300"
             />
           ) : (
             <>

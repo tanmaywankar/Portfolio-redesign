@@ -92,18 +92,32 @@
   animation: ud 2s ease-in-out infinite;
 }
 
-/* Remove greyscale and contrast boost on Android and mobile touch devices */
-html.is-android img,
-html.is-android .grayscale,
-html.is-android [class*="grayscale"] {
+/* Remove greyscale on Android and mobile touch devices for project images, but keep hero portrait grayscale */
+html.is-android img:not(.hero-portrait),
+html.is-android .grayscale:not(.hero-portrait),
+html.is-android [class*="grayscale"]:not(.hero-portrait) {
   filter: none !important;
   -webkit-filter: none !important;
 }
 
 @media (hover: none) and (pointer: coarse) {
-  img,
-  .grayscale,
-  [class*="grayscale"] {
+  img:not(.hero-portrait),
+  .grayscale:not(.hero-portrait),
+  [class*="grayscale"]:not(.hero-portrait) {
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+}
+
+/* Hero portrait: stay grayscale on mobile (never turn to color on hover/tap) */
+.hero-portrait {
+  filter: grayscale(100%) contrast(125%) !important;
+  -webkit-filter: grayscale(100%) contrast(125%) !important;
+}
+
+@media (min-width: 1024px) {
+  /* On PC / desktop, allow hover to reveal full color */
+  .group:hover .hero-portrait {
     filter: none !important;
     -webkit-filter: none !important;
   }
