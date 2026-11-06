@@ -4,7 +4,7 @@ export const HeroGraphic = ({ photoSrc }) => {
   return (
     <div className="relative w-full flex justify-center lg:justify-end items-center">
       <div
-        className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 border-2 border-ink dark:border-white bg-white dark:bg-charcoalCard p-4 sm:p-5 shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] flex flex-col justify-between relative transition-all duration-200 hover:-translate-y-1 mx-auto lg:mx-0 group"
+        className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-none md:w-96 lg:w-96 lg:h-96 border-2 border-ink dark:border-white bg-white dark:bg-charcoalCard p-4 sm:p-5 shadow-brutalist dark:shadow-[4px_4px_0px_0px_#002BFF] flex flex-col justify-between relative transition-all duration-200 hover:-translate-y-1 mx-auto lg:mx-0 group"
         data-cursor="hover-btn"
       >
         {/* Top Technical Metadata Stamp */}
@@ -18,7 +18,7 @@ export const HeroGraphic = ({ photoSrc }) => {
         </div>
 
         {/* Center Architectural Viewport Container for Portrait Photo */}
-        <div className="relative flex-1 my-3 border border-ink/30 dark:border-white/30 bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center overflow-hidden">
+        <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:flex-1 my-3 border border-ink/30 dark:border-white/30 bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center overflow-hidden">
           {photoSrc ? (
             <img
               src={photoSrc}
